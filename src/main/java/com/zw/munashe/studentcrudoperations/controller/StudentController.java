@@ -42,6 +42,7 @@ public class StudentController {
         return student;
     }
     @DeleteMapping("students/delete/{id}")
+    @ResponseStatus(code=HttpStatus.GONE)
     public void deleteStudent(@PathVariable int id){
        Student student= repository.findById(id).get();
         repository.delete(student);
